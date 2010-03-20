@@ -14,7 +14,9 @@ CouchDB's replication means that programs running locally, can still be social. 
 
 ## Installation
 
-Couchapp requires Python 2.5x or sup. To install couchapp using easy_install you must make sure you have a recent version of setuptools installed (as of this writing, 0.6c6 (0.6a9 on windows) or later):
+Couchapp requires Python 2.5 or higher. To install couchapp using easy_install you must make sure you have a recent version of setuptools installed (as of this writing, Windows users need at least setuptools 0.6a9, while others can make do with 0.6c6).
+
+You can install setuptools with the following Unix commands:
 
     $ curl -O http://peak.telecommunity.com/dist/ez_setup.py
     $ sudo python ez_setup.py -U setuptools
@@ -42,7 +44,7 @@ There are apps you can build with server-side components that you can't build wi
 
 # Usage
 
-To upload your application to a CouchDB database, run this command from within you application directory. In this example we assume you have a copy of CouchDB running on your local machine.
+To upload your application to a CouchDB database, run the `couchapp push` command from within you application directory. In this example we assume you have a copy of CouchDB running on your local machine.
 
 ## Push
 
@@ -74,7 +76,7 @@ As we begin to see more apps built using CouchApp, we plan to include helpful fu
 
 ### !json for data
 
-After all the `!code` includes have been processed (insuring that included code may also use the `!json` macro), `couchapp push` does another pass through the function, running the `!json path.to.json` macros. This accumulates the data found in the JSON design doc at `path.to.json` into a single object for inclusion. After all the `!json` macros have been processed, the accumlated object is serialized to json and stored in variable names corresponding to their path's roots. 
+After all the `!code` includes have been processed (ensuring that included code may also use the `!json` macro), `couchapp push` does another pass through the function, running the `!json path.to.json` macros. This accumulates the data found in the JSON design doc at `path.to.json` into a single object for inclusion. After all the `!json` macros have been processed, the accumlated object is serialized to JSON and stored in variable names corresponding to their path's roots. 
 
 The JSON paths use JavaScript style dot notation. Address the nodes as though you are running inside a `with(designDoc){ ... }` block. See the examples below.
 
